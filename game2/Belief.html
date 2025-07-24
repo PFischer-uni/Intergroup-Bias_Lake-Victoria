@@ -1,0 +1,33 @@
+
+{{ block title }}Mchezo wa 2 {{ endblock }}
+
+{{ block content }}
+
+<p>Unaamini kuwa <span style="color:blue">mchezaji mwenzako</span> aliweka alama 10 kwenye
+    <span style ="color:#2e8b57">{{C.POCKET}}</span> <img src="{{ static 'images/coin_pocket.png'}}" style="width:40px;height:50px;"> au kwenye
+    <span style ="color:brown">{{C.POT}}</span><img src="{{ static 'images/pot_with_coins.png'}}" style="width:50px;height:50px;">?</p>
+
+
+<label id='pocket_label' for="value1">
+  <input type="radio" name="belief" id="value1" value=0>
+           <img src="{{ static 'images/coin_pocket.png'}}" style="width:40px;height:50px;"> {{C.POCKET}}
+
+            </label>
+<br>
+        <label id='pot_label' for="value2">
+  <input type="radio" name="belief" id="value2" value=10>
+           <img src="{{ static 'images/pot_with_coins.png'}}" style="width:50px;height:50px;"> {{C.POT}}
+
+
+            </label>
+{{ formfield_errors 'belief' }}
+
+<br>
+<br>
+
+
+  <button class="otree-btn-next btn btn-primary">{{C.NEXT}}</button>
+{{ endblock }}
+{{ block styles }}
+ {{C.STYLE}}
+{{ endblock }}

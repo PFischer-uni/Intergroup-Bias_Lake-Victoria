@@ -1,0 +1,27 @@
+{{ block title }}Mchezo wa 2 {{ endblock }}
+
+{{ block content }}
+<p>  Mchezaji mwenzako ni {{fish_of_other_player}} mvuvi. Ila tu si yule uliyecheza naye katika mchezo wa 1.</p>
+
+<div id="main">
+
+        {{ if other_dagaa }}
+
+            <img src="{{ static 'images/dagaa.png'}}">
+
+        {{ else }}
+
+
+            <img src="{{ static 'images/nile_perch.png' }}">
+
+        {{ endif }}
+
+     </div>
+
+
+
+{{ endblock }}
+{{ block styles }}
+ {{C.STYLE}}
+
+{{ endblock }}

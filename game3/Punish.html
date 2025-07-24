@@ -1,0 +1,87 @@
+{{ extends "global/Page.html" }}
+{{ block title }}Game 2 {{ endblock }}
+{{ block content }}
+<p> <b>Step 2</b></p>
+    <p>
+
+    </p>
+
+<p> Zur Erinnerung, hier nochmal die Ergebnisse aus Stufe 1:</p>
+
+<style>
+    table {
+        text-align: center;
+    }
+    th {
+        padding: 0 10px;
+        border-right: 1px solid #bbbbbb;
+    }
+    td {
+        padding: 0 10px;
+        border-right: 1px solid #bbbbbb;
+    }
+    th {
+        padding: 0 10px;
+        border-left: 1px solid #bbbbbb;
+    }
+    td {
+        padding: 0 10px;
+        border-left: 1px solid #bbbbbb;
+    }
+  th {
+        padding: 0 10px;
+        border-bottom: 1px solid #bbbbbb;
+    }
+    td {
+        padding: 0 10px;
+        border-bottom: 1px solid #bbbbbb;
+    }
+    th {
+        padding: 0 10px;
+        border-top: 1px solid #bbbbbb;
+    }
+</style>
+<p>
+<table class="table-condensed">
+    <tr>
+		<th></th>
+
+		<th><span style="color:green">Sie selbst</span></th>
+
+		<th><span style="color:blue">Das andere Mitglied</span></th>
+
+        <tr>
+    <td> Universität</td>
+
+		<td>{{uni_of_player}}</td>
+
+    <td> {{uni_of_other_player}}</td>
+
+</tr>
+<tr>
+    <td>Beitrag zum Projekt</td>
+
+    <td>{{ player.contribution }} </td>
+    <td>{{player.contribution_received}} </td>
+</tr>
+    <tr>
+        <td>Gewinn nach Stufe 1</td>
+
+        <td> {{ player.payoff }} </td>
+
+        <td> {{ player.payoff_other_player }} </td>
+    </tr>
+
+</table>
+
+<p></p>
+<p> Wie viele Punkte wollen Sie dem anderen Mitglied zuordnen, um dessen Gewinn zu reduzieren?</p>
+
+
+    {{ formfields }}
+
+  <button class="otree-btn-next btn btn-primary">{{C.NEXT}}</button>
+{{ endblock }}
+{{ block styles }}
+ {{C.STYLE}}
+{{ endblock }}

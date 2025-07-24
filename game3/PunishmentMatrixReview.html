@@ -1,0 +1,31 @@
+{{ extends "global/Page.html" }}
+{{ block title }}Mchezo wa 3  {{ endblock }}
+{{ block content }}
+
+<p> <b> Hatua ya kwanza - Matokeo </b> </p>
+
+
+
+<p></p>
+- {{ other_player.zz|cu }} <img src="{{ static 'images/zz.png'}}" style="width:500px;height:150px;">
+</p>
+<hr>
+<p>
+- {{ other_player.tz|cu }} <img src="{{ static 'images/zt.png'}}" style="width:500px;height:150px;">
+</p>
+<hr>
+<p>
+- {{ other_player.zt|cu }} <img src="{{ static 'images/tz.png'}}" style="width:500px;height:150px;">
+</p>
+<hr>
+<p>
+- {{ other_player.tt|cu }} <img src="{{ static 'images/tt.png'}}" style="width:500px;height:150px;">
+
+</p>
+
+
+  <button class="otree-btn-next btn btn-primary">{{C.NEXT}}</button>
+{{ endblock }}
+{{ block styles }}
+ {{C.STYLE}}
+{{ endblock }}

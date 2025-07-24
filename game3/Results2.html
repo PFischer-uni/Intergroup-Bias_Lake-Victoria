@@ -1,0 +1,121 @@
+{{ extends "global/Page.html" }}
+{{ block title }}Mchezo wa 3 {{ endblock }}
+{{ block content }}
+
+<p> <b>Hatua ya pili - Matokeo  </b> </p>
+
+<style>
+    table {
+        text-align: center;
+    }
+    th {
+        padding: 0 10px;
+        border-right: 1px solid #bbbbbb;
+    }
+    td {
+        padding: 0 10px;
+        border-right: 1px solid #bbbbbb;
+    }
+    th {
+        padding: 0 10px;
+        border-left: 1px solid #bbbbbb;
+    }
+    td {
+        padding: 0 10px;
+        border-left: 1px solid #bbbbbb;
+    }
+  th {
+        padding: 0 10px;
+        border-bottom: 1px solid #bbbbbb;
+    }
+    td {
+        padding: 0 10px;
+        border-bottom: 1px solid #bbbbbb;
+    }
+    th {
+        padding: 0 10px;
+        border-top: 1px solid #bbbbbb;
+    }
+ </style>
+<p>
+<table class="table-condensed">
+    <tr>
+		<th></th>
+
+		<th><span style="color:green">Wewe</span>
+        <div id="main">
+
+                {{ if fish_dagaa }}
+
+            <img src="{{ static 'images/fisher_dagaa_black.png'}}"style="width:120px;height:120px;">
+
+        {{ else }}
+
+
+            <img src="{{ static 'images/fisher_nile_black.png' }}"style="width:120px;height:120px;">
+
+        {{ endif }}
+
+     </div></th>
+
+		<th><span style="color:blue">Mchezaji mwenzako</span>
+        <div id="main">
+
+        {{ if other_dagaa }}
+
+            <img src="{{ static 'images/fisher_dagaa_black.png'}}"style="width:120px;height:120px;">
+
+        {{ else }}
+
+
+            <img src="{{ static 'images/fisher_nile_black.png' }}"style="width:120px;height:120px;">
+
+        {{ endif }}
+
+     </div></th>
+        </tr>
+    <td> Alama zilizowekwa kwenye {{C.POT}}
+    <img src="{{ static 'images/pot_with_coins.png'}}" style="width:50px;height:60px;"></td>
+
+    <td>{{ player.contribution|cu }} </td>
+    <td>{{player.contribution_received|cu}} </td>
+</tr>
+    <tr>
+        <td> Mapato baada ya <b>hatua ya kwanza </b>
+         <img src="{{ static 'images/Tokens.png'}}" style="width:50px;height:60px;"></td>
+
+        <td> {{ player_payoff_part1 }} </td>
+
+        <td> {{ other_player_payoff_part1 }}</td>
+    </tr>
+    <tr>
+        <td> Alama za ziada baada ya kuchagua kuwa unapunguza
+        <img src="{{ static 'images/Tokens.png'}}" style="width:60px;height:60px;"></td>
+
+        <td>{{extra_token|cu}} </td>
+
+        <td>{{extra_token_received|cu}}</td>
+    </tr>
+
+    <tr>
+        <td> Mapato yaliyopungua unayopata
+        <img src="{{ static 'images/punishment.png'}}" style="width:60px;height:60px;"></td>
+        <td>{{player.punishment_received|cu}}</td>
+        <td>{{ player.punishment|cu}}</td>
+    </tr>
+<tr>
+    <td>Mapato baada ya <b> hatua ya pili</b>
+     <img src="{{ static 'images/Tokens.png'}}" style="width:50px;height:60px;"></td>
+
+    <td>{{player.payoff}} </td>
+
+ <td>{{ other_player_payoff_part2 }} </td>
+</tr>
+</table>
+</p>
+
+  <button class="otree-btn-next btn btn-primary">{{C.NEXT}}</button>
+{{ endblock }}
+{{ block styles }}
+ {{C.STYLE}}
+{{ endblock }}

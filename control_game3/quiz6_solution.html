@@ -1,0 +1,32 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block title %}
+{% endblock %}
+
+{% block content %}
+
+   <div id="main">
+
+        {% if player.quiz5_solution %}
+
+            <img src="{{ static 'images/right_check.png'}}">
+              <br>
+       kyozemu kitufu!
+       <br>
+
+        {% else %}
+
+            <img src="{{ static 'images/wrong_cross.png' }}">
+              <br>
+       kyozemu kifu!
+       <br>
+        {% endif %}
+
+
+    </div>
+{% endblock %}
+{% block styles %}
+ {{C.STYLE}}
+
+{% endblock %}
